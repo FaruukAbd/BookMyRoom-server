@@ -19,7 +19,7 @@ const connect=async ()=>{
     } catch (error) {
         throw error;
     } 
-}; 
+};  
 
 app.use(cors());
 app.use(cookieParser())
