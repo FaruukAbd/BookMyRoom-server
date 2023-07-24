@@ -9,12 +9,12 @@ const router=express.Router();
 // })
 
 //update
-router.put("/:id",verifyUser,updateUser)
+router.put("/:id",updateUser)
 //delete
 router.delete("/:id",verifyUser,deleteUser);
 
 //get
-router.get("/:id",verifyUser,getUser);
+router.get("/:id",getUser);
 
 //get all User
 router.get("/",verifyAdmin,getUsers);

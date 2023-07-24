@@ -14,7 +14,7 @@ export const register=async (req,res,next)=>{
         await newUser.save();
        
         // res.status(200).json(newUser );  
-        const token=jwt.sign({id:newUser._id,isadmin:newUser.isadmin},"alludbakuraf");
+        const token=jwt.sign({id:newUser._id,isadmin:newUser.isadmin},process.env.JWT_SEC_KEY);
 
           const { password, isadmin, ...otherDetails } = newUser._doc;
         
@@ -39,7 +39,7 @@ export const login=async (req,res,next)=>{
         if (!isPasswordCorrect)
           return next(errorCreate(400, "Wrong password or username!"));
 
-          const token=jwt.sign({id:user._id,isadmin:user.isadmin},"alludbakuraf");
+          const token=jwt.sign({id:user._id,isadmin:user.isadmin},process.env.JWT_SEC_KEY);
 
           const { password, isadmin, ...otherDetails } = user._doc;
         

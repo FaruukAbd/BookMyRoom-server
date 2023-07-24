@@ -5,9 +5,9 @@ import { verifyAdmin } from "../utils/verifyToken.js";
 const router=express.Router();
 
 //create
-router.post("/", verifyAdmin, createBooking)
+router.post("/", createBooking)
 //delete
-router.delete("/:id",verifyAdmin,deleteBooking)
+router.delete("/:id",deleteBooking)
 //get 
 router.get("/find/:userId",getBookings)
 

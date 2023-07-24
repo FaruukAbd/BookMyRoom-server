@@ -25,20 +25,7 @@ app.use(cors());
 app.use(cookieParser())
 app.use(express.json()); 
 
-// const errorHandler = (err, req, res, next) => {
-//     // Check if the error has a status code defined
-//     const statusCode = err.status || 500;
-  
-//     // Set the response status code
-//     res.status(statusCode);
-  
-//     // Set the response JSON data
-//     res.json({
-//       message: err.message || 'Internal Server Error',
-//       error: err, 
-//     });
-//   };
-// app.use(errorHandler);
+
 
 //middlewares 
 app.use("/api/auth",authRoute);
